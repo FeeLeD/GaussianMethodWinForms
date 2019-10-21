@@ -17,21 +17,21 @@ namespace WinFormsGaussianMethod
 
         private void SortMatrix()
         {
-            var tempMatrix = new double[4, 5];
-            var tempRow = new double[5];
+            var tempMatrix = new double[4, 5]; //временная матрица
+            var tempRow = new double[5]; //временная строка
             for (int j = 0, rowValue = 0, end = 3, start = 0; j < 3; j++, rowValue++, start++)
             {
                 for (var i = rowValue; i < 4; i++)
                 {
                     if (Matrix[i, j] == 0)
                     {
-                        for (var elem = j; elem < 5; elem++)
+                        for (var elem = 0; elem < 5; elem++)
                             tempMatrix[end, elem] = Matrix[i, elem];
                         end--;
                     }
                     else
                     {
-                        for (var elem = j; elem < 5; elem++)
+                        for (var elem = 0; elem < 5; elem++)
                             tempMatrix[start, elem] = Matrix[i, elem];
                         start++;
                     }
